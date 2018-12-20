@@ -1,4 +1,4 @@
-rootProject.name = 'oauth2login-gateway'
+rootProject.name = 'sample-gateway-oauth2login'
 
 include 'gateway'
 include 'resource-server'
