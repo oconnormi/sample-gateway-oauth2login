@@ -9,9 +9,14 @@ logging:
     org.springframework.security.oauth2: INFO
 #    org.springframework.boot.autoconfigure: DEBUG
 
+kc:
+  base-url: http://keycloak.docker.localhost/auth
+  realm: master
+  realm-url: ${kc.base-url}/realms/${kc.realm}
+
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8090/uaa/token_keys
+          jwk-set-uri: ${kc.realm-url}/protocol/openid-connect/certs
