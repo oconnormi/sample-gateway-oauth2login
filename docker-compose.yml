@@ -17,3 +17,4 @@ services:
       - "traefik.frontend.rule=Host:gateway.docker.localhost"
       - "traefik.port=8080"
       - "traefik.docker.network=proxy"
+      - "traefik.frontend.passHostHeader=true"

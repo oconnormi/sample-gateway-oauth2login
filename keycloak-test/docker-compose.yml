@@ -18,10 +18,13 @@ services:
       - default
       - proxy
       - security
+    ports:
+      - "8080:8080"
     labels:
-      - "traefik.frontend.rule=Host:keycloak.docker.localhost"
+      - "traefik.frontend.rule=Host:keycloak"
       - "traefik.port=8080"
       - "traefik.docker.network=proxy"
+      - "traefik.frontend.passHostHeader=true"
     environment:
       KEYCLOAK_USER: admin 
       KEYCLOAK_PASSWORD: admin
