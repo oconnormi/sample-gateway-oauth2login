@@ -10,14 +10,12 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     org.springframework.cloud.gateway: TRACE
-#    org.springframework.boot.autoconfigure: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG
 
 kc:
   base-url: http://keycloak.docker.localhost/auth
-  internal-base-url: http://keycloak.docker.localhost:8080/auth
   realm: master
   realm-url: ${kc.base-url}/realms/${kc.realm}
-  internal-realm-url: ${kc.internal-base-url}/realms/${kc.realm}
 
 spring:
   autoconfigure:
@@ -42,4 +40,4 @@ spring:
             token-uri: ${kc.realm-url}/protocol/openid-connect/token
             user-info-uri: ${kc.realm-url}/protocol/openid-connect/userinfo
             user-name-attribute: preferred_username
-            jwk-set-uri: ${kc.internal-realm-url}/protocol/openid-connect/certs
+            jwk-set-uri: ${kc.realm-url}/protocol/openid-connect/certs
