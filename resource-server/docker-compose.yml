@@ -1,0 +1,12 @@
+version: '3.3'
+
+networks: #top level field
+  security:
+    external: true
+
+services:
+  resource:
+    image: resource-server
+    networks:
+      - default
+      - security

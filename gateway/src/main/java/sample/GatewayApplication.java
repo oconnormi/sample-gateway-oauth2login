@@ -43,7 +43,7 @@ public class GatewayApplication {
 		return builder.routes()
 				.route("resource", r -> r.path("/resource")
 						.filters(f -> f.filter(filterFactory.apply()))
-						.uri("http://resource.docker.localhost:9000"))
+						.uri("http://resource:9000"))
 				.build();
 		//@formatter:on
 	}
